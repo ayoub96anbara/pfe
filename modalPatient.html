@@ -1,0 +1,68 @@
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="newPatientModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nouveau Patient</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputName">First Name</label>
+                            <input type="text" class="form-control" id="inputName" placeholder="First Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputLastName">Last Name</label>
+                            <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputAddress">Address(Optional)</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputProfession">Profession(Optional)</label>
+                            <input type="text" class="form-control" id="inputProfession" placeholder="Profession">
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label for="inputAge">Age</label>
+                            <input type="number" class="form-control" id="inputAge">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">Mutuel</label>
+                            <select id="inputState" class="form-control">
+                           <option selected>None</option>
+                           <option>CNSS</option>
+                           <option>ANAM</option>
+                           <option>SAHAM Assurance</option>
+                           <option >AXA Assurance</option>
+                       </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputTel">Tel</label>
+                            <input type="tel" class="form-control" id="inputTel" placeholder="phone" value="00212">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="observation">Observations</label>
+                            <textarea name="observation" id="observation" class="form-control" rows="5"></textarea>
+                            <!-- <input type="text" class="form-control input-xg" id="observation" placeholder="write your observation"> -->
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
