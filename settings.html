@@ -4,11 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Appointments</title>
-    <link rel="icon" href="assets/img/doctor.png">
-    <!-- cdn table sorted jquery  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/css/theme.default.min.css">
-
+    <title>Settings</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
@@ -20,16 +16,18 @@
             <div class="container-fluid d-flex flex-column p-0">
                 <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                     <div class="sidebar-brand-icon"><i class="fas fa-clinic-medical"></i></div>
-                    <div class="sidebar-brand-text mx-3"><span>Cabinet</span></div>
+                    <div class="sidebar-brand-text mx-3"><span>CABINET</span></div>
                 </a>
                 <hr class="sidebar-divider my-0">
+
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="patients.html"><i class="fas fa-users"></i><span>Patients</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="appointment.html"><i class="far fa-calendar-alt"></i><span>Appointments</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="appointment.html"><i class="far fa-calendar-alt"></i><span>Appointments</span></a></li>
                     <!-- <li class="nav-item" role="presentation"><a class="nav-link" href="caisse.html"><i class="fas fa-calculator"></i><span>Caisse</span></a></li> -->
+
                     <li class="nav-item" role="presentation"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="settings.html"><i class="fas fa-cogs"></i><span>Settings</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="settings.html"><i class="fas fa-cogs"></i><span>Settings</span></a></li>
 
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
@@ -63,143 +61,73 @@
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                        <h3 class="text-dark mb-0">Appointments</h3>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-xl-3 mb-4">
-                            <div class="card shadow border-left-primary py-2">
-                                <div class="card-body">
-                                    <div class="row align-items-center no-gutters">
-                                        <div class="col mr-2">
-                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>Appointments Today</span></div>
-                                            <div class="text-dark font-weight-bold h5 mb-0"><span>10</span></div>
-                                        </div>
-                                        <div class="col-auto"><i class="fa fa-users fa-2x text-gray-300"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-3 mb-4">
-                            <div class="card shadow border-left-primary py-2">
-                                <div class="card-body">
-                                    <div class="row align-items-center no-gutters">
-                                        <div class="col mr-2">
-                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>Appointments Tomorrow</span></div>
-                                            <div class="text-dark font-weight-bold h5 mb-0"><span>23</span></div>
-                                        </div>
-                                        <div class="col-auto"><i class="fa fa-users fa-2x text-gray-300"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 class="text-dark mb-4">Users</h3>
                     <div class="card shadow">
                         <div class="card-header py-3">
-                            <p class="text-primary m-0 font-weight-bold">Appointments info</p>
+                            <p class="text-primary m-0 font-weight-bold">Users Info</p>
                         </div>
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6 text-nowrap">
-                                    <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label>Show&nbsp;<select class="form-control form-control-sm custom-select custom-select-sm"><option value="10" selected="">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select>&nbsp;</label></div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="text-md-right btn_add_Appointment" id="btn_add_Appointment">
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newAppointmentModal">Add Appointment</button>
-                                    </div>
+
+                            <div class="col-md-6 float-right">
+                                <div class="text-md-right btn_add_User" id="btn_add_User">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newUserModal">Add User</button>
+                                    <p></p>
                                 </div>
                             </div>
-                            <div class="table-responsive table mt-2" id="tableAppointments" role="grid" aria-describedby="dataTable_info">
-                                <table class="table tableAppointments my-0" id="tableAppointments">
+
+                            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                                <table class="table dataTable my-0" id="dataTable">
                                     <thead>
                                         <tr>
-                                            <th data-placeholder="search by full name">Full Name</th>
-                                            <th data-placeholder="search by date & time">Date & Time of rdv</th>
-                                            <th data-placeholder="search by tel">Tel</th>
-
-                                            <th data-filter="false">Action</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Tel</th>
+                                            <th>Role</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td> Mohamed Ariri&nbsp;</td>
-                                            <td>23/02/2020 14:40 PM</td>
+                                            <td>ayoub anbara</td>
+                                            <td>ayoub@gmail.com</td>
                                             <td>+21264444</td>
-
-                                            <td class="td-Action">
-                                                <!-- <div style="float: right" class="float-right"> -->
-                                                <!-- <button type="button" class="btn btn-info fas fa-th"> info</button> -->
-                                                <button type="button" class="btn btn-success fas fa-edit">edit</button>
-                                                <button type="button" class="btn btn-danger fas fa-trash"> delete</button>
-                                                <!-- </div> -->
-
+                                            <td>super admin</td>
+                                            <td>
+                                                <!-- <button type="button" class="btn btn-success fas fa-edit">edit</button>
+                                                <button type="button" class="btn btn-danger fas fa-trash"> delete</button> -->
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>amine Ariri&nbsp;</td>
-                                            <td>27/02/2020 15:40 PM</td>
-                                            <td>+21264444</td>
-
-                                            <td class="td-Action">
-                                                <!-- <div style="float: right" class="float-right"> -->
-                                                <!-- <button type="button" class="btn btn-info fas fa-th"> info</button> -->
+                                            <td>amnine jad</td>
+                                            <td>jad@gmail.com</td>
+                                            <td>+21265544</td>
+                                            <td>medecin</td>
+                                            <td>
                                                 <button type="button" class="btn btn-success fas fa-edit">edit</button>
                                                 <button type="button" class="btn btn-danger fas fa-trash"> delete</button>
-                                                <!-- </div> -->
-
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>Ashton ANAn</td>
-                                            <td>06/04/2020 11:40</td>
-
-
-
-
+                                            <td>fatima arig</td>
+                                            <td>fatima@gmail.com</td>
+                                            <td>+2126444</td>
+                                            <td>secretaire</td>
+                                            <td>
+                                                <button type="button" class="btn btn-success fas fa-edit">edit</button>
+                                                <button type="button" class="btn btn-danger fas fa-trash"> delete</button>
+                                            </td>
                                         </tr>
-                                        <tr>
 
-                                        </tr>
-                                        <tr>
-
-
-
-                                        </tr>
-                                        <tr>
-
-
-
-                                        </tr>
-                                        <tr>
-
-
-
-                                        </tr>
-                                        <tr>
-
-
-
-                                        </tr>
-                                        <tr>
-
-
-
-                                        </tr>
-                                        <tr>
-
-
-
-                                        </tr>
                                     </tbody>
-                                    <tfoot>
+                                    <!-- <tfoot>
                                         <tr>
-                                            <td><strong>Full Name</strong></td>
-                                            <td><strong>Date & Time of rdv</strong></td>
+                                            <td><strong>Nom</strong></td>
+                                            <td><strong>Prenom</strong></td>
                                             <td><strong>Tel</strong></td>
-
+                                            <td><strong>Payement</strong></td>
                                             <td><strong>Action</strong></td>
                                         </tr>
-                                    </tfoot>
+                                    </tfoot> -->
                                 </table>
                             </div>
                             <div class="row">
@@ -224,20 +152,18 @@
             </div>
             <footer class="bg-white sticky-footer">
                 <div class="container my-auto">
-                    <div class="text-center my-auto copyright"><span>Copyright © 2020.developed by Anbara</span></div>
+                    <div class="text-center my-auto copyright"><span>Copyright © Brand 2020</span></div>
                 </div>
             </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
         <!-- include in an modalPatient.html file -->
-        <div w3-include-html="modalAppointment.html"></div>
-
+        <div w3-include-html="modalUser.html"></div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="assets/js/chart.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/jquery.tablesorter.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/jquery.tablesorter.widgets.min.js"></script>
     <script src="assets/js/theme.js"></script>
     <script>
         includeHTML();
